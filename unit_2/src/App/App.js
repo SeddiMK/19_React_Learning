@@ -17,7 +17,9 @@ const site = {
 function App() {
   return (
     <>
-      <Header />
+      <Header site={site} />
+      <Main />
+      <Footer site={site} />
     </>
   );
 }
