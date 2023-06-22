@@ -1,6 +1,6 @@
 import Nav from './Nav';
 
-function Header() {
+function Header(site) {
   return (
     <header>
       <h1>site_name</h1>
