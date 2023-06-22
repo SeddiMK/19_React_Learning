@@ -1,9 +1,9 @@
+import { useLocation } from 'react-router-dom';
+
 function CategoryDescription() {
-  return (
-    <>
-      <h1>Category: {}</h1>
-    </>
-  );
+  let url = useLocation();
+  // console.log(url);
+  return <>Category: {url.pathname}</>;
 }
 
 export default CategoryDescription;
