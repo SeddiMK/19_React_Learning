@@ -17,9 +17,9 @@ const navHome = {
   category: '/cat',
 };
 const navCat = {
-  notebook: '/notebook',
-  monitor: '/monitor',
-  cellphone: '/cellphone',
+  notebook: 'notebook',
+  monitor: 'monitor',
+  cellphone: 'cellphone',
 };
 
 function App() {
@@ -32,9 +32,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/cat" element={<Category nav={navCat} />} />
 
-          <Route path="/cat/:catName" element={<Category />} />
-          <Route path="/cat/:catName" element={<Category />} />
-          <Route path="/cat/:catName" element={<Category />} />
+          <Route path="/cat/:catName" element={<Category nav={navCat} />} />
+          <Route path="/cat/:catName" element={<Category nav={navCat} />} />
+          <Route path="/cat/:catName" element={<Category nav={navCat} />} />
 
           <Route path="*" element={<Error />} />
         </Routes>
