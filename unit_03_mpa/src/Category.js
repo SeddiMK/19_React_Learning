@@ -1,20 +1,22 @@
 import CategoryDescription from './CategoryDescription';
+import { useLocation } from 'react-router-dom';
 
 function Category() {
+  let { pathname } = useLocation();
+  console.log(useLocation());
   return (
     <>
-      <h1>{<CategoryDescription />}</h1>
+      <a href={`${pathname}`}>Назад</a>
 
-      <a href="/">Назад</a>
       <ul>
         <li>
-          <a href="/cat/notebook"> Ноутбуки</a>
+          <a href={`${pathname}/notebook`}> Ноутбуки</a>
         </li>
         <li>
-          <a href="/cat/monitor">Мониторы</a>
+          <a href={`${pathname}/monitor`}>Мониторы</a>
         </li>
         <li>
-          <a href="/cat/cellphone">Мобильные телефоны</a>
+          <a href={`${pathname}/cellphone`}>Мобильные телефоны</a>
         </li>
       </ul>
     </>

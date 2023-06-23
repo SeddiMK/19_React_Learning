@@ -6,6 +6,9 @@ import Home from './Home';
 import About from './About';
 import Category from './Category';
 import CategoryDescription from './CategoryDescription';
+import Notebook from './Notebook';
+import Monitor from './Monitor';
+import Cellphone from './Cellphone';
 
 import Footer from './Footer';
 
@@ -16,6 +19,7 @@ function App() {
     <>
       <Router>
         <Header />
+        <CategoryDescription />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -25,7 +29,7 @@ function App() {
           <Route path="/cat/monitor" element={<Category />} />
           <Route path="/cat/cellphone" element={<Category />} />
 
-          <Route path="*" element={<Error />} />
+          {/* <Route path="*" element={<Error />} /> */}
         </Routes>
       </Router>
 
