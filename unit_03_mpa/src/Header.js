@@ -1,16 +1,18 @@
-function Header() {
+function Header(props) {
+  let navHome = props.nav;
+
   return (
     <>
       <nav>
         <ul>
           <li>
-            <a href="/">Главная</a>
+            <a href={navHome.home}>Главная</a>
           </li>
           <li>
-            <a href="/about">О сайте</a>
+            <a href={navHome.about}>О сайте</a>
           </li>
           <li>
-            <a href="/cat">Категории</a>
+            <a href={navHome.category}>Категории</a>
           </li>
         </ul>
       </nav>

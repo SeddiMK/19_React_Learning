@@ -5,31 +5,38 @@ import Header from './Header';
 import Home from './Home';
 import About from './About';
 import Category from './Category';
-import CategoryDescription from './CategoryDescription';
-import Notebook from './Notebook';
-import Monitor from './Monitor';
-import Cellphone from './Cellphone';
+// import CategoryDescription from './CategoryDescription';
 
 import Footer from './Footer';
 
 import Error from './Error';
 
+const navHome = {
+  home: '/',
+  about: '/about',
+  category: '/cat',
+};
+const navCat = {
+  notebook: '/notebook',
+  monitor: '/monitor',
+  cellphone: '/cellphone',
+};
+
 function App() {
   return (
     <>
+      <Header nav={navHome} />
       <Router>
-        <Header />
-        <CategoryDescription />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/cat" element={<Category />} />
+          <Route path="/cat" element={<Category nav={navCat} />} />
 
-          <Route path="/cat/notebook" element={<Category />} />
-          <Route path="/cat/monitor" element={<Category />} />
-          <Route path="/cat/cellphone" element={<Category />} />
+          <Route path="/cat/:catName" element={<Category />} />
+          <Route path="/cat/:catName" element={<Category />} />
+          <Route path="/cat/:catName" element={<Category />} />
 
-          {/* <Route path="*" element={<Error />} /> */}
+          <Route path="*" element={<Error />} />
         </Routes>
       </Router>
 

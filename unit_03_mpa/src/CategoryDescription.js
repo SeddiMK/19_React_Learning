@@ -1,11 +1,11 @@
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function CategoryDescription() {
-  let url = useLocation();
-  // console.log(url);
+  let { catName } = useParams();
+
   return (
     <>
-      <h1>Category: {url.pathname}</h1>
+      <h1>Category: {catName}</h1>
     </>
   );
 }
