@@ -4,6 +4,11 @@ import { useState } from 'react';
 
 function App() {
   let count4 = 0;
+  let valElement = React.createRef();
+  const [output, setOutput] = useState(7);
+
+  let refStyle = React.createRef();
+  const [styleBgc, setStyleBgc] = useState();
 
   function task1() {
     console.log('task2');
@@ -22,11 +27,36 @@ function App() {
     if (event.target.checked) {
       document.querySelector('.out-5').textContent = event.target.value;
     } else {
-      document.querySelector('.out-5').textContent = '0';
+      document.querySelector('.out-5').innerHTML = '0';
     }
   }
-  function task6() {}
-  function task7() {}
+  function task6() {
+    //state
+    setOutput(valElement.current.value);
+
+    //ref
+    // document.querySelector('.out-6').textContent = valElement.current.value;
+  }
+
+  function randomInt(min, max) {
+    let rand = min + Math.random() * (max - min);
+    return Math.floor(rand);
+  }
+  function task7() {
+    let x = randomInt(0, 255);
+
+    //ref
+    // refStyle.current.style.backgroundColor =
+    //   'rgb(' + x + ', ' + x + ', ' + x + ')';
+
+    //state
+    setStyleBgc('rgb(' + x + ', ' + x + ', ' + x + ')');
+
+    //"в лоб"
+    // document.querySelector('.block-7').style.backgroundColor =
+    //   'rgb(' + x + ', ' + x + ', ' + x + ')';
+  }
+
   function task8() {}
   function task9() {}
   let ar10 = [5, 6, 7];
@@ -57,22 +87,29 @@ function App() {
       </section>
       <section>
         <h2>Task 5</h2>
-        <input type="checkbox" currentValue="55" onChange={task5} />
+        <input type="checkbox" value="55" onChange={task5} />
         <div className="out-5"></div>
       </section>
       <section>
         <h2>Task 6</h2>
-        <select className="task-6" onChange={task6}>
+        <select className="task-6" onChange={task6} ref={valElement}>
           <option value="7">seven</option>
           <option value="4">four</option>
           <option value="9">nine</option>
           <option value="10">ten</option>
         </select>
+        <div className="out-6">{output}</div>
       </section>
       <section>
         <h2>Task 7</h2>
-        <div className="block-7"></div>
-        <button className="task-7">Color</button>
+        <div
+          className="block-7"
+          ref={refStyle}
+          style={{ backgroundColor: styleBgc }}
+        ></div>
+        <button className="task-7" onClick={task7}>
+          Color
+        </button>
       </section>
       <section>
         <h2>Task 8</h2>
