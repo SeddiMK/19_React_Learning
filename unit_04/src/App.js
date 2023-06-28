@@ -41,6 +41,7 @@ function App() {
     // document.querySelector('.out-6').textContent = valElement.current.value;
   }
 
+  // функция для рандомных целых чисел
   function randomInt(min, max) {
     let rand = min + Math.random() * (max - min);
     return Math.floor(rand);
@@ -60,6 +61,7 @@ function App() {
     //   'rgb(' + x + ', ' + x + ', ' + x + ')';
   }
 
+  // функция для проверки на ввод только цифр и букв
   function limitToLettersAndNumbers(input) {
     var regex = /^[a-zA-Zа-яА-Я0-9]+$/;
     return regex.test(input);
@@ -69,6 +71,7 @@ function App() {
     let strOut = '';
 
     if (!limitToLettersAndNumbers(event.key)) {
+      //проверка на ввод только цифр и букв
       strOut = outVal + '';
       setOutVal(strOut);
     } else if (isNaN(Number(event.key))) {
@@ -78,7 +81,6 @@ function App() {
       strOut = outVal + '1';
       setOutVal(strOut);
     }
-    // console.log(strOut);
   }
 
   function task9() {}
