@@ -10,6 +10,9 @@ function App() {
   let refStyle = React.createRef();
   const [styleBgc, setStyleBgc] = useState();
 
+  let inpVal = React.createRef();
+  const [outVal, setOutVal] = useState('');
+
   function task1() {
     console.log('task2');
   }
@@ -57,7 +60,22 @@ function App() {
     //   'rgb(' + x + ', ' + x + ', ' + x + ')';
   }
 
-  function task8() {}
+  function task8(event) {
+    let strOut = '';
+
+    if (event.ctrlKey || event.altKey || event.metaKey) return;
+    console.log(isNaN(Number(event.key)));
+    if (isNaN(Number(event.key))) {
+      strOut = strOut + '0';
+      setOutVal(strOut);
+      // inpVal.current.innerHTML = 0;
+    } else if (!isNaN(Number(event.key))) {
+      strOut = `strOut + '1'`;
+      console.log(strOut);
+      setOutVal(strOut);
+      // inpVal.current.innerHTML = 1;
+    }
+  }
   function task9() {}
   let ar10 = [5, 6, 7];
   function task10() {}
@@ -113,8 +131,13 @@ function App() {
       </section>
       <section>
         <h2>Task 8</h2>
-        <input type="text" className="task-8"></input>
-        <div className="out-8"></div>
+        <input
+          type="text"
+          className="task-8"
+          onKeyPress={task8}
+          ref={inpVal}
+        ></input>
+        <div className="out-8">{outVal}</div>
       </section>
       <section>
         <h2>Task 9</h2>
