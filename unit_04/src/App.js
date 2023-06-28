@@ -60,22 +60,27 @@ function App() {
     //   'rgb(' + x + ', ' + x + ', ' + x + ')';
   }
 
+  function limitToLettersAndNumbers(input) {
+    var regex = /^[a-zA-Zа-яА-Я0-9]+$/;
+    return regex.test(input);
+  }
+
   function task8(event) {
     let strOut = '';
 
-    if (event.ctrlKey || event.altKey || event.metaKey) return;
-    console.log(isNaN(Number(event.key)));
-    if (isNaN(Number(event.key))) {
-      strOut = strOut + '0';
+    if (!limitToLettersAndNumbers(event.key)) {
+      strOut = outVal + '';
       setOutVal(strOut);
-      // inpVal.current.innerHTML = 0;
+    } else if (isNaN(Number(event.key))) {
+      strOut = outVal + '0';
+      setOutVal(strOut);
     } else if (!isNaN(Number(event.key))) {
-      strOut = `strOut + '1'`;
-      console.log(strOut);
+      strOut = outVal + '1';
       setOutVal(strOut);
-      // inpVal.current.innerHTML = 1;
     }
+    // console.log(strOut);
   }
+
   function task9() {}
   let ar10 = [5, 6, 7];
   function task10() {}
