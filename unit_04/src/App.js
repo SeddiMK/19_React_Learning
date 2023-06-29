@@ -69,11 +69,6 @@ function App() {
     //   'rgb(' + x + ', ' + x + ', ' + x + ')';
   }
 
-  // функция для проверки на ввод только цифр и букв
-  function limitToLettersAndNumbers(input) {
-    var regex = /^[a-zA-Zа-яА-Я0-9]+$/;
-    return regex.test(input);
-  }
   function task8(event) {
     let strOut = '';
     let inputs = inpVal.current.value;
@@ -103,11 +98,6 @@ function App() {
     //   strOut = outVal + '1';
     //   setOutVal(strOut);
     // }
-    //проверка на ввод только цифр и букв без других символов
-    //  else if (!limitToLettersAndNumbers(event.key)) {
-    // 		strOut = outVal + '';
-    // 		setOutVal(strOut);
-    // }
   }
 
   function task9() {
@@ -122,15 +112,13 @@ function App() {
   let ar10 = [5, 6, 7];
 
   let inpTask10 = React.createRef();
-  const [newArr, setNewArr] = useState(ar10);
+  let [newArr, setNewArr] = useState(ar10);
 
   function task10() {
     let inputs = Number(inpTask10.current.value);
-    console.log(inputs);
     setNewArr([...newArr, inputs]);
-
-    console.log(newArr);
   }
+  console.log(newArr);
 
   return (
     <>
