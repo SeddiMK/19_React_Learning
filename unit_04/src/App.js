@@ -4,14 +4,22 @@ import { useState } from 'react';
 
 function App() {
   let count4 = 0;
+
+  //task-6
   let valElement = React.createRef();
   const [output, setOutput] = useState(7);
 
+  //tack-7
   let refStyle = React.createRef();
   const [styleBgc, setStyleBgc] = useState();
 
+  //task-8
   let inpVal = React.createRef();
   const [outVal, setOutVal] = useState('');
+
+  //task-9
+  let onInpRange = React.createRef();
+  const [outRange, setOutRange] = useState();
 
   function task1() {
     console.log('task2');
@@ -102,10 +110,27 @@ function App() {
     // }
   }
 
-  function task9() {}
+  function task9() {
+    //ref =================================
+    // document.querySelector('.out-9').innerHTML = onInpRange.current.value;
 
+    //state =============================
+    setOutRange(onInpRange.current.value);
+  }
+
+  //task-10
   let ar10 = [5, 6, 7];
-  function task10() {}
+
+  let inpTask10 = React.createRef();
+  const [newArr, setNewArr] = useState(ar10);
+
+  function task10() {
+    let inputs = Number(inpTask10.current.value);
+    console.log(inputs);
+    setNewArr([...newArr, inputs]);
+
+    console.log(newArr);
+  }
 
   return (
     <>
@@ -168,13 +193,20 @@ function App() {
       </section>
       <section>
         <h2>Task 9</h2>
-        <input type="range" className="task-9"></input>
-        <div className="out-9"></div>
+        <input
+          type="range"
+          className="task-9"
+          onInput={task9}
+          ref={onInpRange}
+        ></input>
+        <div className="out-9">{outRange}</div>
       </section>
       <section>
         <h2>Task 10</h2>
-        <input type="number" className="i-10"></input>
-        <button className="task-10">Push</button>
+        <input type="number" className="i-10" ref={inpTask10}></input>
+        <button className="task-10" onClick={task10}>
+          Push
+        </button>
       </section>
     </>
   );
