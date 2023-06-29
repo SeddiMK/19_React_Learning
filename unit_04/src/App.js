@@ -66,12 +66,11 @@ function App() {
     var regex = /^[a-zA-Zа-яА-Я0-9]+$/;
     return regex.test(input);
   }
-
   function task8(event) {
     let strOut = '';
 
-      // если символ, то выводим 0
-      if (isNaN(Number(event.key))) {
+    // если символ, то выводим 0
+    if (isNaN(Number(event.key))) {
       strOut = outVal + '0';
       setOutVal(strOut);
 
@@ -79,14 +78,16 @@ function App() {
     } else if (!isNaN(Number(event.key))) {
       strOut = outVal + '1';
       setOutVal(strOut);
-		}
-		//проверка на ввод только цифр и букв без других символов
-		//  else if (!limitToLettersAndNumbers(event.key)) {
-		// 		strOut = outVal + '';
-		// 		setOutVal(strOut);
-		// }
+    }
+    //проверка на ввод только цифр и букв без других символов
+    //  else if (!limitToLettersAndNumbers(event.key)) {
+    // 		strOut = outVal + '';
+    // 		setOutVal(strOut);
+    // }
+  }
 
   function task9() {}
+
   let ar10 = [5, 6, 7];
   function task10() {}
 
@@ -144,7 +145,7 @@ function App() {
         <input
           type="text"
           className="task-8"
-          onKeyPress={task8}
+          onKeyUp={task8} // onKeyPress - устарел, но работает. Вместо него рекомендуют onKeyUp
           ref={inpVal}
         ></input>
         <div className="out-8">{outVal}</div>
