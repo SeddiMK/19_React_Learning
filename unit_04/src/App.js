@@ -68,17 +68,33 @@ function App() {
   }
   function task8(event) {
     let strOut = '';
+    let inputs = inpVal.current.value;
 
+    //ref ============================
     // если символ, то выводим 0
-    if (isNaN(Number(event.key))) {
-      strOut = outVal + '0';
-      setOutVal(strOut);
-
+    for (let i = 0; i < inputs.length; i++) {
+      if (isNaN(inputs[i])) {
+        strOut += '0';
+        document.querySelector('.out-8').innerHTML = strOut;
+      }
       // если цифра, то выводим 1
-    } else if (!isNaN(Number(event.key))) {
-      strOut = outVal + '1';
-      setOutVal(strOut);
+      else {
+        strOut = strOut + '1';
+        document.querySelector('.out-8').innerHTML = strOut;
+      }
     }
+
+    //state ==========================
+    // если символ, то выводим 0
+    // if (isNaN(Number(event.key))) {
+    //   strOut = outVal + '0';
+    //   setOutVal(strOut);
+
+    // если цифра, то выводим 1
+    // } else if (!isNaN(Number(event.key))) {
+    //   strOut = outVal + '1';
+    //   setOutVal(strOut);
+    // }
     //проверка на ввод только цифр и букв без других символов
     //  else if (!limitToLettersAndNumbers(event.key)) {
     // 		strOut = outVal + '';
