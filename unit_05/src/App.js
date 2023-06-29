@@ -2,55 +2,42 @@ import './App.css';
 import React from 'react';
 import { useState } from 'react';
 
-
 function App() {
+  const [st1, useSt1] = useState();
 
-  function task1() {
-
+  function Task1() {
+    //исправил на заглавное имя, т.к. ругается реакт:  React Hook "useSt1" is called in function "task1" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word "use"  react-hooks/rules-of-hooks
+    const inpTsk1Val = document.querySelector('.task-1').previousSibling;
+    useSt1(inpTsk1Val.value);
   }
-  function task2() {
-
-  }
-  function task3() {
-
-  }
-  function task4() {
-
-  }
-  function task5() {
-
-  }
-  function task6() {
-
-  }
-  function task7() {
-
-  }
-  function task8() {
-
-  }
-  function task9() {
-
-  }
-  function task10() {
-
-  }
+  const [st2, useSt2] = useState();
+  function task2() {}
+  function task3() {}
+  function task4() {}
+  function task5() {}
+  function task6() {}
+  function task7() {}
+  function task8() {}
+  function task9() {}
+  function task10() {}
 
   return (
     <>
       <h1>События</h1>
       <section>
         <h2>Task 1</h2>
-		<input type="text"/>
-        <button className="task-1">Push</button>
+        <input type="text" />
+        <button className="task-1" onClick={Task1}>
+          Push
+        </button>
         <div>{st1}</div>
       </section>
       <section>
         <h2>Task 2</h2>
-        <div className="task-2"></div>
+        <div className="task-2" onMouseEnter={task2}></div>
         <div>{st2}</div>
       </section>
-      <section>
+      {/*<section>
         <h2>Task 3</h2>
         <input type="text" className="task-3" />
         <div>{st3}</div>
@@ -96,7 +83,7 @@ function App() {
         <input type="number" className="i-10"></input>
         <button className="task-10">Push</button>
         <div>Тут выводим - форма вывода любая!</div>
-      </section>
+      </section> */}
     </>
   );
 }
