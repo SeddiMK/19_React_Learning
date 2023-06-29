@@ -70,18 +70,21 @@ function App() {
   function task8(event) {
     let strOut = '';
 
-    if (!limitToLettersAndNumbers(event.key)) {
-      //проверка на ввод только цифр и букв
-      strOut = outVal + '';
-      setOutVal(strOut);
-    } else if (isNaN(Number(event.key))) {
+      // если символ, то выводим 0
+      if (isNaN(Number(event.key))) {
       strOut = outVal + '0';
       setOutVal(strOut);
+
+      // если цифра, то выводим 1
     } else if (!isNaN(Number(event.key))) {
       strOut = outVal + '1';
       setOutVal(strOut);
-    }
-  }
+		}
+		//проверка на ввод только цифр и букв без других символов
+		//  else if (!limitToLettersAndNumbers(event.key)) {
+		// 		strOut = outVal + '';
+		// 		setOutVal(strOut);
+		// }
 
   function task9() {}
   let ar10 = [5, 6, 7];
