@@ -91,12 +91,12 @@ function App() {
     // если символ, то выводим 0
     // if (isNaN(Number(event.key))) {
     //   strOut = outVal + '0';
-    //   setOutVal(strOut); // !!!!!!!!!!!!!!! Должно быть один вызов после всех if else
+    //   setOutVal(strOut);
 
     // если цифра, то выводим 1
     // } else if (!isNaN(Number(event.key))) {
     //   strOut = outVal + '1';
-    //   setOutVal(strOut); // !!!!!!!!!!!!!!!
+    //   setOutVal(strOut);
     // }
   }
 
