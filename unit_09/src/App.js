@@ -7,6 +7,7 @@ import Comment2 from './Comment2';
 
 import PlaceholderPostHook from './PlaceholderPostHook';
 import CommentHook from './CommentHook';
+import Comment2Hook from './Comment2Hook';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       {/* <Comment/> */}
       {/* <Comment2 /> */}
       {/* <PlaceholderPostHook /> */}
-      <CommentHook />
+      {/* <CommentHook /> */}
+      <Comment2Hook />
     </>
   );
 }
