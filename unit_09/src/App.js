@@ -14,7 +14,7 @@ function App() {
       {/* <PlaceholderPost /> */}
       {/* <Comment/> */}
       {/* <Comment2 /> */}
-      <PlaceholderPostHook />
+      {/* <PlaceholderPostHook /> */}
       <CommentHook />
     </>
   );

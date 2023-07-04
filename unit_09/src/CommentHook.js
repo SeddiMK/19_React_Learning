@@ -1,24 +1,41 @@
 import React, { useState, useEffect } from 'react';
 
 function CommentHook() {
-  function SelectHandler(e) {
-    let valOption = e.target.option;
+  const [data, setData] = useState([]);
+  let idSelect = '1';
 
-    useEffect(() => {
-      fetch('https://jsonplaceholder.typicode.com/posts/ID/comments')
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-        });
-    }, []);
+  function SelectHandler(e) {
+    idSelect = e.target.value;
+    fetch(`https://jsonplaceholder.typicode.com/posts/${idSelect}/comments`)
+      .then((response) => response.json())
+      .then((dataFetch) => {
+        console.log(dataFetch);
+        setData(dataFetch);
+      });
   }
+
   return (
-    <select onChange={SelectHandler}>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </select>
+    <div>
+      <select onChange={SelectHandler}>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <div>
+        <h1>Comments</h1>
+        {data.map((el, index) => (
+          <section key={el.id}>
+            <p>
+              <b>
+                {index + 1}. {el.email}
+              </b>
+            </p>
+            <p>{el.body}</p>
+          </section>
+        ))}
+      </div>
+    </div>
   );
 }
 
