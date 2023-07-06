@@ -1,7 +1,7 @@
-const addNewUsers = (passport, user, age) => ({
+const addNewUsers = (passport, userName, age) => ({
   type: 'ADD_USER',
   passport,
-  user,
+  userName,
   age,
 });
 

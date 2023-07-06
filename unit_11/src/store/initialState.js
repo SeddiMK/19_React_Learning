@@ -2,7 +2,7 @@ const initialState = {
   users: [
     {
       passport: 'USA',
-      user: 'Trewor',
+      userName: 'Trewor',
       age: 98,
     },
   ],

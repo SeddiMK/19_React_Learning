@@ -7,7 +7,7 @@ const user = (state = [], action) => {
         ...state,
         {
           passport: action.passport,
-          name: action.name,
+          userName: action.userName,
           age: action.age,
         },
       ];
