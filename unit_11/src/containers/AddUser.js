@@ -1,10 +1,12 @@
 import { useDispatch } from 'react-redux';
-
+import { addNewUser } from '../action';
 const AddUser = () => {
   const dispatch = useDispatch();
 
-  function formHandler() {}
-
+  function formHandler(e) {}
+  e.preventDefault();
+  console.log(e.target.elements);
+  dispatch(addNewUser(passport, name, age));
   return (
     <>
       <form>
