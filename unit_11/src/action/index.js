@@ -1,6 +1,8 @@
-export const addNewUsers = (passport, name, age) => ({
+const addNewUsers = (passport, user, age) => ({
   type: 'ADD_USER',
   passport,
-  name,
+  user,
   age,
 });
+
+export default addNewUsers;

@@ -1,9 +1,11 @@
-export default initialStore = {
+const initialState = {
   users: [
     {
       passport: 'USA',
-      name: 'Trewor',
+      user: 'Trewor',
       age: 98,
     },
   ],
 };
+
+export default initialState;
