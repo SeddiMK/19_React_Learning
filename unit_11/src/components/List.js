@@ -1,9 +1,9 @@
-function List(userName) {
-  console.log(userName.users);
+function List(users) {
+  console.log(users.users);
   return (
-    <></>
+    <p>jjgjgghjjhgjjhgjgjh</p>
     // <ul>
-    //   {user.users.map((item, ind) => (
+    //   {userName.users.map((item, ind) => (
     //     <li key={ind}>
     //       {item.password}
     //       {item.userName}
