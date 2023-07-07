@@ -11,6 +11,7 @@ const user = (state = [], action) => {
           age: action.age,
         },
       ];
+
     default:
       return state;
   }
