@@ -1,16 +1,12 @@
-function List(users) {
-  console.log(users.users);
+function List(user) {
   return (
-    <p>jjgjgghjjhgjjhgjgjh</p>
-    // <ul>
-    //   {userName.users.map((item, ind) => (
-    //     <li key={ind}>
-    //       {item.password}
-    //       {item.userName}
-    //       {item.age}
-    //     </li>
-    //   ))}
-    // </ul>
+    <ul>
+      {user.users.map((item, ind) => (
+        <li key={ind}>
+          {item.passport} {item.userName} {item.age}
+        </li>
+      ))}
+    </ul>
   );
 }
 

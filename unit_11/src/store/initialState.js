@@ -1,5 +1,5 @@
 const initialState = {
-  users: [
+  user: [
     {
       passport: 'USA',
       userName: 'Trewor',

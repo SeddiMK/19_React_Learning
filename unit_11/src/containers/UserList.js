@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import List from '../components/List';
 
 function mapStateToProps(state) {
-  console.log(state);
-  const { users } = state;
-  return { users: users };
+  const { user } = state;
+  return { users: user };
 }
 
 export default connect(mapStateToProps, null)(List);
