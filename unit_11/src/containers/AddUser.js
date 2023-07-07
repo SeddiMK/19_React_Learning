@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import addNewUser from '../action';
 
 const AddUser = () => {
@@ -26,4 +26,4 @@ const AddUser = () => {
   );
 };
 
-export default AddUser;
+export default connect()(AddUser);
