@@ -21,10 +21,12 @@ export default function CartList() {
   let clickHandler = (e) => {
     e.preventDefault();
     let targ = e.target;
+    console.log(targ.getAttribute('priceAllItem'));
 
     if (!targ.classList.contains('add-to-cart')) {
       return true;
     }
+
     if (!targ.classList.contains('delete-one-position')) {
       return true;
     }
@@ -32,8 +34,8 @@ export default function CartList() {
       return true;
     }
 
-    dispath(minus(targ.getAttribute('data-key')));
-    dispath(del(targ.getAttribute('data-key')));
+    dispath(minus(targ.getAttribute('priceAllItem')));
+    dispath(del(targ.getAttribute('priceAllItem')));
   };
 
   return (

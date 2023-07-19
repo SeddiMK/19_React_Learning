@@ -16,6 +16,8 @@ export const cartSlice = createSlice({
       state.cartVal[articul]++;
     },
     minus: (state, data) => {
+      console.log(data);
+      // console.log(state);
       let articul = data.payload;
       console.log(state.cartVal.cartVal);
       if (state.cartVal[articul] === undefined) {
@@ -24,7 +26,7 @@ export const cartSlice = createSlice({
 
       // delete one goods
       if (state.cartVal[articul] > 0) {
-        state.cartVal[articul] -= 1;
+        state.cartVal[articul]--;
       }
       // delete to cart
       if (state.cartVal[articul] === 0) {
