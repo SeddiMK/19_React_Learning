@@ -29,3 +29,10 @@
   display: block;
   margin: 20px auto;
 }
+.carts-block {
+  margin-bottom: 20px;
+}
+
+table td {
+  border: 1px solid black;
+}

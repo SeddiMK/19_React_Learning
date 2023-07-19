@@ -1,12 +1,28 @@
 export default function Cart(props) {
   return (
     <div className="carts-block">
-      {/* <img src={props.image} alt="" />
-      <p>{props.title}</p>
-      <p>{props.cost}</p>
-      <button className="add-to-cart" data-key={props.articul}>
-        Add to cart
-      </button> */}
+      <table>
+        <tbody>
+          <tr className="goods">
+            <td>Name good</td>
+            <td>Price for one item</td>
+            <td>Quantity</td>
+            <td>Price all item</td>
+          </tr>
+          <tr className="goods">
+            <td className="goods-name">{props.title}</td>
+            <td className="goods-price-one">{props.cost}</td>
+            <td className="goods-">{props.quantity}</td>
+            <td className="goods-price-all">{props.priceAllItem}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button className="delete-one-position" data-key={props.articul}>
+        Delete one position
+      </button>
+      <button className="delete-quantity" data-key={props.articul}>
+        Delete quantity
+      </button>
     </div>
   );
 }
