@@ -11,31 +11,28 @@ export default function CartList() {
   const cart = useSelector(selectCart);
   const dispath = useDispatch();
 
+  console.log(cart);
+
   // переидексирую массив товара
   const goodsObj = goods.reduce((accum, item) => {
     accum[item['articul']] = item;
     return accum;
   }, {});
-  // console.log(goodsObj);
+
+  console.log(goodsObj);
 
   let clickHandler = (e) => {
     e.preventDefault();
     let targ = e.target;
-    console.log(targ.getAttribute('priceAllItem'));
+    if (targ.classList.contains('delete-one-position')) {
+      dispath(minus(targ.getAttribute('data-key')));
 
-    if (!targ.classList.contains('add-to-cart')) {
-      return true;
+      // return true;
     }
-
-    if (!targ.classList.contains('delete-one-position')) {
-      return true;
+    if (targ.classList.contains('delete-quantity')) {
+      dispath(del(targ.getAttribute('data-key')));
+      // return true;
     }
-    if (!targ.classList.contains('delete-quantity')) {
-      return true;
-    }
-
-    dispath(minus(targ.getAttribute('priceAllItem')));
-    dispath(del(targ.getAttribute('priceAllItem')));
   };
 
   return (
@@ -49,19 +46,18 @@ export default function CartList() {
       </ul>
 
       <div>
-        <ul>
-          {Object.keys(cart).map((el) => (
-            <Cart
-              title={goodsObj[el]['title']}
-              cost={goodsObj[el]['cost']}
-              quantity={cart[el]}
-              priceAllItem={goodsObj[el]['cost'] * cart[el]}
-              // image={goodsObj[el]['image']}
-              // articul={goodsObj[el]['articul']}
-              key={el + goodsObj[el]['title']}
-            />
-          ))}
-        </ul>
+        {Object.keys(cart).map((el) => (
+          <Cart
+            title={goodsObj[el]['title']}
+            cost={goodsObj[el]['cost']}
+            quantity={cart[el]}
+            priceAllItem={goodsObj[el]['cost'] * cart[el]}
+            image={goodsObj[el]['image']}
+            articul={goodsObj[el]['articul']}
+            key={el + goodsObj[el]['title']}
+          />
+        ))}
+        <div className="fullPrice">Full price: {goodsObj['cost'] * cart}</div>
       </div>
     </div>
   );

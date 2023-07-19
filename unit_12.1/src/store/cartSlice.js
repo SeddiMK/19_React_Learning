@@ -8,7 +8,7 @@ export const cartSlice = createSlice({
   reducers: {
     increment: (state, data) => {
       let articul = data.payload;
-
+      console.log(state.cartVal[articul]);
       // есть ли что то в объекте cartVal
       if (state.cartVal[articul] === undefined) {
         state.cartVal[articul] = 0;
@@ -16,29 +16,31 @@ export const cartSlice = createSlice({
       state.cartVal[articul]++;
     },
     minus: (state, data) => {
-      console.log(data);
-      // console.log(state);
+      // let priceVal = +data.payload;
       let articul = data.payload;
-      console.log(state.cartVal.cartVal);
+      console.log('minus');
+
       if (state.cartVal[articul] === undefined) {
         state.cartVal[articul] = 0;
       }
 
-      // delete one goods
+      // // delete one goods
+      // console.log(state.cartVal[articul]);
       if (state.cartVal[articul] > 0) {
         state.cartVal[articul]--;
       }
-      // delete to cart
+      // // delete to cart
       if (state.cartVal[articul] === 0) {
-        state.cartVal[articul] = null;
+        state.cartVal[articul] = 0;
       }
     },
     del: (state, data) => {
       let articul = data.payload;
+      console.log('del');
 
-      // delete to cart
-      if (state.cartVal[articul]) {
-        state.cartVal[articul] = undefined;
+      // // delete to cart
+      if (state.cartVal[articul] > 0) {
+        state.cartVal[articul] = 0;
       }
     },
   },
