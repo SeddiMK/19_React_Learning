@@ -20,7 +20,7 @@ export default function Cart(props) {
                 />
               </td>
               <td className="goods-price-one">{props.cost}</td>
-              <td className="goods-">{props.quantity}</td>
+              <td className="goods-quantity">{props.quantity}</td>
               <td className="goods-price-all">{props.priceAllItem}</td>
             </tr>
           </tbody>

@@ -11,15 +11,13 @@ export default function CartList() {
   const cart = useSelector(selectCart);
   const dispath = useDispatch();
 
-  console.log(cart);
-
   // переидексирую массив товара
   const goodsObj = goods.reduce((accum, item) => {
     accum[item['articul']] = item;
     return accum;
   }, {});
 
-  console.log(goodsObj);
+  // console.log(goodsObj);
 
   let clickHandler = (e) => {
     e.preventDefault();
@@ -34,6 +32,13 @@ export default function CartList() {
       // return true;
     }
   };
+
+  //full price
+  let fullPrice = 0;
+  Object.keys(cart).map((el) => {
+    fullPrice += goodsObj[el]['cost'] * cart[el];
+    return fullPrice;
+  });
 
   return (
     <div className="goods-table" onClick={clickHandler}>
@@ -57,7 +62,7 @@ export default function CartList() {
             key={el + goodsObj[el]['title']}
           />
         ))}
-        <div className="fullPrice">Full price: {goodsObj['cost'] * cart}</div>
+        <div className="fullPrice">Full price: {fullPrice}</div>
       </div>
     </div>
   );

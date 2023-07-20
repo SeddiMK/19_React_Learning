@@ -8,7 +8,7 @@ export const cartSlice = createSlice({
   reducers: {
     increment: (state, data) => {
       let articul = data.payload;
-      console.log(state.cartVal[articul]);
+
       // есть ли что то в объекте cartVal
       if (state.cartVal[articul] === undefined) {
         state.cartVal[articul] = 0;
