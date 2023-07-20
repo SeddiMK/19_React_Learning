@@ -1,6 +1,6 @@
 import './App.css';
-import GoodsList from './container/GoodsList';
-import CartList from './container/СartList';
+import GoodsList from './containers/GoodsList';
+import CartList from './containers/СartList';
 
 function App() {
   return (
